@@ -27,7 +27,7 @@ document.querySelectorAll('.filter').forEach((button) => button.addEventListener
 const modal = document.querySelector('#articleModal');
 const modalContent = document.querySelector('#modalContent');
 function openArticle(index) {
-  const story = index === 0 ? { category: 'CHINA', title: 'China: a country shaped by ancient traditions and modern energy', image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1200&q=85', time: '1 MIN READ', body: 'China is a country where thousands of years of history meet a rapidly changing present. From the Great Wall and ancient temples to vibrant cities and quiet mountain villages, every region reveals a different part of its identity.' } : stories[index];
+  const story = index === 0 ? { category: 'CHINA', title: 'China: a country shaped by ancient traditions and modern energy', image: 'https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=1200&q=85', time: '1 MIN READ', body: 'China is a country where thousands of years of history meet a rapidly changing present. From the Great Wall and ancient temples to vibrant cities and quiet mountain villages, every region reveals a different part of its identity.' } : stories[index];
   modalContent.innerHTML = `<div class="modal-hero"><img src="${story.image}" alt="${story.title}"><h2>${story.title}</h2></div><div class="modal-body"><span class="tag">${story.category} · ${story.time}</span><p>${story.body}</p><p>Its traditions, food, art, and landscapes continue to connect generations. China is a place of contrasts, where the past remains present while new ideas shape the future.</p></div>`;
   modal.showModal();
 }
