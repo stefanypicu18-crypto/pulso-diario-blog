@@ -20,7 +20,7 @@ function renderStories() {
   grid.querySelectorAll('[data-read]').forEach((card) => card.addEventListener('click', () => openArticle(Number(card.dataset.read))));
 }
 
-document.querySelectorAll('.filter').forEach((button) => button.addEventListener('click', () => {
+document.querySelectorAll('button.filter').forEach((button) => button.addEventListener('click', () => {
   document.querySelector('.filter.active').classList.remove('active'); button.classList.add('active'); currentFilter = button.dataset.filter; renderStories();
 }));
 const modal = document.querySelector('#articleModal');
