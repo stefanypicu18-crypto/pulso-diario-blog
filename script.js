@@ -35,4 +35,10 @@ document.querySelector('#modalClose').addEventListener('click', () => modal.clos
 modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
 
 document.querySelector('#menuToggle').addEventListener('click', () => document.querySelector('#mainNav').classList.toggle('open'));
+const navigationLinks = [...document.querySelectorAll('.main-nav a')];
+const navigationTargets = navigationLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+const setActiveNavigation = (targetId) => navigationLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${targetId}`));
+navigationLinks.forEach((link) => link.addEventListener('click', () => setActiveNavigation(link.getAttribute('href').slice(1))));
+const navigationObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) setActiveNavigation(entry.target.id); }), { rootMargin: '-30% 0px -60% 0px' });
+navigationTargets.forEach((target) => navigationObserver.observe(target));
 renderStories();
