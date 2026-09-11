@@ -9,12 +9,10 @@ const stories = [
 
 const grid = document.querySelector('#storyGrid');
 const emptyState = document.querySelector('#emptyState');
-const searchInput = document.querySelector('#searchInput');
-let currentFilter = 'Todos';
+let currentFilter = 'Ciudad';
 
 function renderStories() {
-  const term = searchInput.value.toLowerCase().trim();
-  const filtered = stories.filter((story) => (currentFilter === 'Todos' || story.category === currentFilter) && `${story.title} ${story.category}`.toLowerCase().includes(term));
+  const filtered = stories.filter((story) => story.category === currentFilter);
   grid.innerHTML = filtered.map((story) => {
     const index = stories.indexOf(story);
     return `<article class="story-card reveal" data-read="${index}"><div class="story-card-image"><img src="${story.image}" alt="${story.title}" loading="lazy"></div><div class="card-meta"><span>${story.category}</span><span>${story.time}</span></div><h3>${story.title}</h3></article>`;
@@ -26,8 +24,6 @@ function renderStories() {
 document.querySelectorAll('.filter').forEach((button) => button.addEventListener('click', () => {
   document.querySelector('.filter.active').classList.remove('active'); button.classList.add('active'); currentFilter = button.dataset.filter; renderStories();
 }));
-searchInput.addEventListener('input', renderStories);
-
 const modal = document.querySelector('#articleModal');
 const modalContent = document.querySelector('#modalContent');
 function openArticle(index) {

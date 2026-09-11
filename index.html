@@ -11,16 +11,6 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Pulso Diario, inicio">
-      <span class="brand-mark">P</span>
-      <span>Pulso<span>diario</span></span>
-    </a>
-    <nav class="main-nav" aria-label="Navegación principal">
-      <a class="active" href="#inicio">Inicio</a>
-    </nav>
-  </header>
-
   <main id="inicio">
     <section class="hero-section">
       <div class="hero-copy reveal">
@@ -56,12 +46,8 @@
       </div>
       <div class="filter-row">
         <div class="filters" role="group" aria-label="Filtrar por categoría">
-          <button class="filter active" data-filter="Todos">Todos</button>
-          <button class="filter" data-filter="Cultura">Cultura</button>
-          <button class="filter" data-filter="Ideas">Ideas</button>
-          <button class="filter" data-filter="Ciudad">Ciudad</button>
+          <button class="filter active" data-filter="Ciudad">Ciudad</button>
         </div>
-        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar historias" /></label>
       </div>
       <div class="story-grid" id="storyGrid"></div>
       <p class="empty-state" id="emptyState" hidden>No encontramos historias con esa búsqueda.</p>
@@ -78,7 +64,7 @@
     </section>
   </main>
 
-  <footer class="site-footer"><span>© 2026 PULSO DIARIO</span><span>Hecho para leer despacio.</span><div><a href="#inicio">Instagram</a><a href="#inicio">Contacto</a></div></footer>
+  <footer class="site-footer"><span>© 2026 PULSO DIARIO</span><span>By Stefani Pinto</span></footer>
 
   <dialog class="article-modal" id="articleModal"><button class="modal-close" id="modalClose" aria-label="Cerrar">×</button><div id="modalContent"></div></dialog>
   <script src="script.js"></script>
