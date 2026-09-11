@@ -1,24 +1,20 @@
 const stories = [
-  { category: 'Ideas', title: 'La ciudad también se diseña con los pies', image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=82', time: '4 min de lectura', body: 'Caminar no es solamente una forma de llegar. Es una manera de entender el ritmo de un barrio, sus encuentros y sus pequeños descubrimientos. Hablamos con quienes están imaginando ciudades más humanas, una esquina a la vez.' },
-  { category: 'Ciudad', title: 'Un mapa secreto de los lugares que nos hacen bien', image: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=82', time: '7 min de lectura', body: 'Hay espacios que no aparecen en las guías, pero se quedan en la memoria. Una biblioteca silenciosa, una banca con sombra, el café donde una conversación se alarga. Este es nuestro mapa de los refugios cotidianos.' },
-  { category: 'Cultura', title: 'El placer de hacer una cosa a la vez', image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=82', time: '5 min de lectura', body: 'En una época que celebra la velocidad, elegir la atención es casi un gesto político. Tres creadoras comparten cómo recuperaron el tiempo lento y qué encontraron en ese espacio.' },
-  { category: 'Ideas', title: 'Pequeñas revoluciones para una vida más ligera', image: 'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=82', time: '6 min de lectura', body: 'Cambiar el mundo también puede comenzar por una decisión pequeña: comprar menos, reparar más, compartir lo que sabemos y dejar sitio para lo inesperado.' },
-  { category: 'Cultura', title: 'La música que vive entre dos generaciones', image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=82', time: '8 min de lectura', body: 'Una playlist puede ser una conversación. Reunimos canciones, recuerdos y voces distintas para explorar aquello que nos une cuando las palabras no alcanzan.' },
-  { category: 'Ciudad', title: 'La mesa como lugar para volver', image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=82', time: '3 min de lectura', body: 'Cocinar para otros es una forma de decir aquí estamos. En esta crónica, cuatro mesas cuentan la historia de familias que encontraron una nueva manera de reunirse.' },
-  { category: 'Ciudad', title: 'Beijing, where history meets the future', image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=900&q=82', time: '5 min de lectura', body: 'Beijing brings ancient gates, quiet courtyards, and a fast-moving creative scene together in one unforgettable city.' },
-  { category: 'Ciudad', title: 'Xi’an and the stories beneath the streets', image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=900&q=82', time: '4 min de lectura', body: 'Xi’an is a city of old walls, remarkable food, and archaeological treasures that make the past feel close enough to touch.' },
-  { category: 'Ciudad', title: 'Chengdu, a slower rhythm of discovery', image: 'https://images.unsplash.com/photo-1547981609-4b6bf67db4b0?auto=format&fit=crop&w=900&q=82', time: '6 min de lectura', body: 'In Chengdu, teahouses, spicy flavors, and green spaces create a warm city rhythm that invites visitors to stay a little longer.' }
+  { category: 'CITY', city: 'BEIJING', code: 'CN 01 - BEIJING', title: 'History and Tradition', body: 'Beijing is the capital of China and a city full of history. I would love to visit the Great Wall of China and the Forbidden City.', image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=900&q=82' },
+  { category: 'CITY', city: 'SHANGHAI', code: 'CN 02 — SHANGHAI', title: 'The Modern City', body: 'Shanghai is one of the most modern cities in China. I would like to see its amazing skyscrapers, explore its streets, and enjoy the city at night.', image: 'https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=900&q=82' },
+  { category: 'CITY', city: "XI'AN", code: "CN 03 — XI'AN", title: 'A Journey to the Past', body: "Xi'an is a historic city and the home of the famous Terracotta Warriors. I would love to visit this place and learn more about Chinese history.", image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=900&q=82' },
+  { category: 'CITY', city: 'CHENGDU', code: 'CN 04 — CHENGDU', title: 'The Home of Pandas', body: 'Chengdu is famous for its giant pandas. I would love to visit a panda conservation center and learn more about these beautiful animals.', image: 'https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=900&q=82' },
+  { category: 'CITY', city: 'GUILIN', code: 'CN 05 — GUILIN', title: 'Nature and Landscapes', body: 'Guilin is famous for its beautiful mountains, rivers, and natural landscapes. I would love to take a boat trip on the Li River.', image: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=82' }
 ];
 
 const grid = document.querySelector('#storyGrid');
 const emptyState = document.querySelector('#emptyState');
-let currentFilter = 'Ciudad';
+let currentFilter = 'CITY';
 
 function renderStories() {
   const filtered = stories.filter((story) => story.category === currentFilter);
   grid.innerHTML = filtered.map((story) => {
     const index = stories.indexOf(story);
-    return `<article class="story-card reveal" data-read="${index}"><div class="story-card-image"><img src="${story.image}" alt="${story.title}" loading="lazy"></div><div class="card-meta"><span>${story.category}</span><span>${story.time}</span></div><h3>${story.title}</h3></article>`;
+    return `<article class="story-card reveal" data-read="${index}"><div class="story-card-image"><img src="${story.image}" alt="${story.city}" loading="lazy"></div><div class="card-meta"><span>${story.category}</span><span>1 MIN READ</span></div><h3>${story.city}</h3></article>`;
   }).join('');
   emptyState.hidden = filtered.length > 0;
   grid.querySelectorAll('[data-read]').forEach((card) => card.addEventListener('click', () => openArticle(Number(card.dataset.read))));
@@ -30,11 +26,11 @@ document.querySelectorAll('.filter').forEach((button) => button.addEventListener
 const modal = document.querySelector('#articleModal');
 const modalContent = document.querySelector('#modalContent');
 function openArticle(index) {
-  const story = index === 0 ? { category: 'CHINA', title: 'China: a country shaped by ancient traditions and modern energy', image: 'https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=1200&q=85', time: '1 MIN READ', body: 'China is a country where thousands of years of history meet a rapidly changing present. From the Great Wall and ancient temples to vibrant cities and quiet mountain villages, every region reveals a different part of its identity.' } : stories[index];
-  modalContent.innerHTML = `<div class="modal-hero"><img src="${story.image}" alt="${story.title}"><h2>${story.title}</h2></div><div class="modal-body"><span class="tag">${story.category} · ${story.time}</span><p>${story.body}</p><p>Its traditions, food, art, and landscapes continue to connect generations. China is a place of contrasts, where the past remains present while new ideas shape the future.</p></div>`;
+  const story = index === 'hero' ? { code: 'CHINA BEYOND', title: 'China: a country shaped by ancient traditions and modern energy', image: 'https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=1200&q=85', body: 'China is a country where thousands of years of history meet a rapidly changing present.' } : stories[index];
+  modalContent.innerHTML = `<div class="modal-hero"><img src="${story.image}" alt="${story.city || story.title}"></div><div class="modal-body"><span class="tag">${story.code}</span><h3>${story.title}</h3><p>${story.body}</p></div>`;
   modal.showModal();
 }
-document.querySelectorAll('[data-read]').forEach((button) => button.addEventListener('click', () => openArticle(Number(button.dataset.read))));
+document.querySelectorAll('[data-read]').forEach((button) => button.addEventListener('click', () => openArticle(button.dataset.read === 'hero' ? 'hero' : Number(button.dataset.read))));
 document.querySelector('#modalClose').addEventListener('click', () => modal.close());
 modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
 
