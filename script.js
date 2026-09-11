@@ -35,6 +35,7 @@ document.querySelector('#modalClose').addEventListener('click', () => modal.clos
 modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
 
 document.querySelector('#menuToggle').addEventListener('click', () => document.querySelector('#mainNav').classList.toggle('open'));
+document.querySelectorAll('.like-button').forEach((button) => button.addEventListener('click', () => { button.classList.toggle('liked'); button.textContent = button.classList.contains('liked') ? '♥ Liked' : '♡ Like'; }));
 const navigationLinks = [...document.querySelectorAll('.main-nav a')];
 const navigationTargets = navigationLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
 const setActiveNavigation = (targetId) => navigationLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${targetId}`));
