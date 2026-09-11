@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pulso Diario: historias, ideas y cultura para mirar el mundo con otros ojos." />
+  <title>Pulso Diario | Historias con otra mirada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Pulso Diario, inicio">
+      <span class="brand-mark">P</span>
+      <span>Pulso<span>diario</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a class="active" href="#inicio">Inicio</a>
+      <a href="#historias">Historias</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">◐</button>
+      <button class="subscribe-button" data-open-newsletter>Suscribirme <span>↗</span></button>
+      <button class="menu-button" id="menuToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero-section">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Edición 06 · Septiembre 2026</p>
+        <h1>Ideas que<br /><em>se quedan.</em></h1>
+        <p class="hero-intro">Una revista digital para quienes todavía se detienen a mirar, conversar y descubrir algo nuevo.</p>
+        <a class="text-link" href="#historias">Explorar historias <span>↗</span></a>
+      </div>
+      <article class="hero-story reveal delay-1" data-category="Cultura" data-article="0">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85" alt="Amigas conversando al aire libre" />
+        <div class="story-overlay">
+          <div><span class="tag">Cultura</span><span class="story-time">6 min de lectura</span></div>
+          <h2>La generación que volvió a encontrarse sin una pantalla de por medio</h2>
+          <button class="read-link" data-read="0">Leer historia <span>↗</span></button>
+        </div>
+      </article>
+      <div class="hero-side-note reveal delay-2">
+        <span class="number">01</span>
+        <p>“Lo cotidiano también puede ser extraordinario cuando se mira con atención.”</p>
+        <span class="side-line"></span>
+        <small>Por Martina Salas</small>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Últimas noticias">
+      <span>Lo último</span><span class="ticker-dot">✦</span><span>Diseño con propósito</span><span class="ticker-dot">✦</span><span>Ciudades caminables</span><span class="ticker-dot">✦</span><span>Pequeñas revoluciones</span>
+    </section>
+
+    <section class="stories-section" id="historias">
+      <div class="section-heading">
+        <div><p class="eyebrow">La selección del día</p><h2>Historias para<br /><em>desacelerar</em></h2></div>
+        <p class="section-description">Periodismo amable, ideas frescas y conversaciones que abren ventanas. Elige tu próxima lectura.</p>
+      </div>
+      <div class="filter-row">
+        <div class="filters" role="group" aria-label="Filtrar por categoría">
+          <button class="filter active" data-filter="Todos">Todos</button>
+          <button class="filter" data-filter="Cultura">Cultura</button>
+          <button class="filter" data-filter="Ideas">Ideas</button>
+          <button class="filter" data-filter="Ciudad">Ciudad</button>
+        </div>
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar historias" /></label>
+      </div>
+      <div class="story-grid" id="storyGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No encontramos historias con esa búsqueda.</p>
+    </section>
+
+    <section class="quote-section" id="agenda">
+      <div class="quote-image"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80" alt="Personas compartiendo una conversación" /></div>
+      <div class="quote-copy"><span class="quote-symbol">“</span><blockquote>El mundo cambia cuando alguien decide prestar atención.</blockquote><p>— Pulso Diario</p><a class="text-link" href="#historias">Ver toda la agenda <span>↗</span></a></div>
+    </section>
+
+    <section class="newsletter" id="nosotros">
+      <div><p class="eyebrow">Una carta breve, cada domingo</p><h2>Lo mejor de la semana,<br /><em>en tu bandeja.</em></h2></div>
+      <form id="newsletterForm"><label for="email">Tu correo electrónico</label><div class="email-row"><input id="email" type="email" required placeholder="hola@ejemplo.com" /><button type="submit">Unirme <span>↗</span></button></div><p class="form-message" id="formMessage"></p></form>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>© 2026 PULSO DIARIO</span><span>Hecho para leer despacio.</span><div><a href="#inicio">Instagram</a><a href="#inicio">Contacto</a></div></footer>
+
+  <dialog class="article-modal" id="articleModal"><button class="modal-close" id="modalClose" aria-label="Cerrar">×</button><div id="modalContent"></div></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
