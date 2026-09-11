@@ -36,4 +36,5 @@ document.querySelector('#modalClose').addEventListener('click', () => modal.clos
 modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
 
 document.querySelector('#newsletterForm').addEventListener('submit', (event) => { event.preventDefault(); document.querySelector('#formMessage').textContent = 'Listo. Revisa tu correo para confirmar la suscripción.'; event.target.reset(); });
+document.querySelector('#menuToggle').addEventListener('click', () => document.querySelector('#mainNav').classList.toggle('open'));
 renderStories();

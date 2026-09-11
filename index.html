@@ -11,13 +11,28 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main id="inicio">
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Pulso Diario home">
+      <span class="brand-mark">P</span>
+      <span>Pulso<span>diario</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a class="active" href="#home">HOME</a>
+      <a href="#cities">CITIES</a>
+      <a href="#dreams">MY TRAVEL DREAMS</a>
+      <a href="#comments">COMMENTS</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+    <button class="menu-button" id="menuToggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <main id="home">
     <section class="hero-section">
       <div class="hero-copy reveal">
         <p class="eyebrow"><span></span> Edición 06 · Septiembre 2026</p>
         <h1>Ideas que<br /><em>se quedan.</em></h1>
         <p class="hero-intro">Una revista digital para quienes todavía se detienen a mirar, conversar y descubrir algo nuevo.</p>
-        <a class="text-link" href="#historias">Explorar historias <span>↗</span></a>
+        <a class="text-link" href="#cities">Explorar historias <span>↗</span></a>
       </div>
       <article class="hero-story reveal delay-1" data-category="China" data-article="0">
         <img src="https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=1200&q=85" alt="Shanghai skyline in China" />
@@ -29,11 +44,11 @@
       </article>
     </section>
 
-    <section class="ticker" aria-label="Últimas noticias">
+    <section class="ticker" id="dreams" aria-label="Últimas noticias">
       <span>Lo último</span><span class="ticker-dot">✦</span><span>Diseño con propósito</span><span class="ticker-dot">✦</span><span>Ciudades caminables</span><span class="ticker-dot">✦</span><span>Pequeñas revoluciones</span>
     </section>
 
-    <section class="stories-section" id="historias">
+    <section class="stories-section" id="cities">
       <div class="section-heading">
         <div><p class="eyebrow">La selección del día</p><h2>Historias para<br /><em>desacelerar</em></h2></div>
         <p class="section-description">Periodismo amable, ideas frescas y conversaciones que abren ventanas. Elige tu próxima lectura.</p>
@@ -47,12 +62,12 @@
       <p class="empty-state" id="emptyState" hidden>No encontramos historias con esa búsqueda.</p>
     </section>
 
-    <section class="quote-section" id="agenda">
+    <section class="quote-section" id="comments">
       <div class="quote-image"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80" alt="Personas compartiendo una conversación" /></div>
-      <div class="quote-copy"><span class="quote-symbol">“</span><blockquote>El mundo cambia cuando alguien decide prestar atención.</blockquote><p>— Pulso Diario</p><a class="text-link" href="#historias">Ver toda la agenda <span>↗</span></a></div>
+      <div class="quote-copy"><span class="quote-symbol">“</span><blockquote>El mundo cambia cuando alguien decide prestar atención.</blockquote><p>— Pulso Diario</p><a class="text-link" href="#cities">Ver toda la agenda <span>↗</span></a></div>
     </section>
 
-    <section class="newsletter" id="nosotros">
+    <section class="newsletter" id="about">
       <div><p class="eyebrow">Una carta breve, cada domingo</p><h2>Lo mejor de la semana,<br /><em>en tu bandeja.</em></h2></div>
       <form id="newsletterForm"><label for="email">Tu correo electrónico</label><div class="email-row"><input id="email" type="email" required placeholder="hola@ejemplo.com" /><button type="submit">Unirme <span>↗</span></button></div><p class="form-message" id="formMessage"></p></form>
     </section>
