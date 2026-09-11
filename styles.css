@@ -2,6 +2,8 @@
 :root { --ink: #20211c; --paper: #f4f0e8; --cream: #e7e0d3; --coral: #e46248; --yellow: #f2c84b; --muted: #77766d; --line: rgba(32,33,28,.18); --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', Arial, sans-serif; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; }
+.hero-subtitle { margin: 22px 0 16px; color: var(--coral); font: 600 17px/1.2 var(--serif); }
+.hero-intro { max-width: 330px; margin: 0; }
 body.dark { --ink: #f5f1e8; --paper: #20211c; --cream: #30312a; --muted: #b5b1a5; --line: rgba(245,241,232,.2); }
 a { color: inherit; text-decoration: none; } button, input { font: inherit; }
 .site-header { height: 76px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(12px); }
