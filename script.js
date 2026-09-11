@@ -40,7 +40,4 @@ document.querySelector('#modalClose').addEventListener('click', () => modal.clos
 modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
 
 document.querySelector('#newsletterForm').addEventListener('submit', (event) => { event.preventDefault(); document.querySelector('#formMessage').textContent = 'Listo. Revisa tu correo para confirmar la suscripción.'; event.target.reset(); });
-document.querySelector('#themeToggle').addEventListener('click', () => document.body.classList.toggle('dark'));
-document.querySelector('#menuToggle').addEventListener('click', () => document.querySelector('.main-nav').classList.toggle('open'));
-document.querySelectorAll('[data-open-newsletter]').forEach((button) => button.addEventListener('click', () => document.querySelector('#email').focus()));
 renderStories();
